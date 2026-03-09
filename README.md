@@ -30,7 +30,7 @@ The application provides a comprehensive comparison interface with:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/car-image-difference-detection.git
+git clone https://github.com/kittur-mk/car-image-difference-detection.git
 cd car-image-difference-detection
 ```
 
