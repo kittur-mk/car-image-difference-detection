@@ -26,9 +26,9 @@ def test_imports():
     for module in required_modules:
         try:
             importlib.import_module(module)
-            print(f"✅ {module}")
+            print(f"OK {module}")
         except ImportError as e:
-            print(f"❌ {module}: {e}")
+            print(f"ERROR {module}: {e}")
             failed_imports.append(module)
     
     return failed_imports
