@@ -1,17 +1,28 @@
 import streamlit as st
-import cv2
 import numpy as np
 
-from modules.preprocessing import preprocess_image
-from modules.detection import crop_car
-from modules.alignment import align_images
-from modules.part_detection import CarPartDetector
-from modules.part_comparison import PartComparator, compare_parts, draw_part_bounding_boxes
-from modules.report import draw_differences, generate_visual_report
-from modules.part_mapper import identify_part
-from modules.difference_detector import detect_differences
-from modules.image_alignment import align_images as align_images_orb
-from modules.car_parts import get_car_parts
+# Handle OpenCV import with fallback
+try:
+    import cv2
+except ImportError:
+    st.error("OpenCV (cv2) is not installed. Please install it with: pip install opencv-python")
+    st.stop()
+
+# Import other modules
+try:
+    from modules.preprocessing import preprocess_image
+    from modules.detection import crop_car
+    from modules.alignment import align_images
+    from modules.part_detection import CarPartDetector
+    from modules.part_comparison import PartComparator, compare_parts, draw_part_bounding_boxes
+    from modules.report import draw_differences, generate_visual_report
+    from modules.part_mapper import identify_part
+    from modules.difference_detector import detect_differences
+    from modules.image_alignment import align_images as align_images_orb
+    from modules.car_parts import get_car_parts
+except ImportError as e:
+    st.error(f"Error importing modules: {e}")
+    st.stop()
 
 
 st.set_page_config(layout="wide")
