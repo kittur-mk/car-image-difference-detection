@@ -22,13 +22,13 @@ def check_dependencies():
     required_packages = [
         'opencv-python',
         'numpy', 
+        'pillow',
+        'matplotlib',
+        'requests',
         'scikit-image',
         'ultralytics',
-        'pillow',
         'torch',
-        'torchvision',
-        'matplotlib',
-        'requests'
+        'torchvision'
     ]
     
     missing_packages = []
